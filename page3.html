@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3rd page</title>
+    <style>
+        body{
+            background-image: url('p4.jfif');
+            background-repeat: no-repeat;
+            background-size: 400px;
+            background-color: rgb(220, 169, 174);
+        }
+     .me{
+        text-align: center;
+        font-size: 40px;
+        color: rgb(114, 37, 90);
+     }
+     .u {
+            background-color: #fff8fc;
+            padding: 25px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            margin: 40px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .u h4 {
+            color: rgb(95, 30, 75);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        input.similar {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid pink;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #fff0f5;
+            outline: none;
+            margin-bottom: 15px;
+        }
+
+        button.enter {
+            padding: 10px 20px;
+            background-color: palevioletred;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button.enter:hover {
+            background-color: rgb(199, 75, 130);
+        }
+
+        .found {
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #ffe4ec;
+            padding: 15px;
+            border-radius: 10px;
+            color: rgb(80, 20, 60);
+            text-align: left;
+            line-height: 1.5;
+        }
+        
+       .first{
+             margin-left: 540px;
+        }
+    </style>
+</head>
+<body>
+ <h3 class="me">Let's Find my hobbies now</h3>
+ <div class="u">
+    <h4>Before that , Enter your one hobby to check if it is present in mine.</h4>
+    <input class="similar" type="text" placeholder="Enter your hobby" minlength="3" required>
+    <button class="enter" onclick="similar()">Enter</button>
+    <p class="found"></p>
+ </div>
+
+ <script>
+    function similar() {
+        let input = document.querySelector('.similar').value;
+        let hobbies = ['eating', 'singing', 'sleeping', 'reading', 'writing', 'drawing', 'listening to music', 'coding'];
+        let cleanedInput = input.trim().toLowerCase();
+          if (cleanedInput.length < 3) {
+            document.querySelector('.found').innerHTML = `Please enter at least <strong>3 letters</strong> to check your hobby 😊`;
+            return;  
+        }
+     if (hobbies.some(hobby => hobby.includes(cleanedInput))) {
+          document.querySelector('.similar').value="";
+            document.querySelector('.found').innerHTML = `Whohoooo, we have similar hobbies.<br><br>
+                So my favourite hobbies are:<br>
+                1. Sleeping<br>
+                2. Eating<br>
+                3. Sleeping again 😴<br><br>
+                Hehe, I am just kidding (actually I am not 😉) but still I have other hobbies, such as:<br>
+                - Singing<br>
+                - Dancing<br>
+                - Drawing<br>
+                - Reading<br>
+                - Writing<br>
+                - Coding and many others!`;
+        } else {
+            document.querySelector('.similar').value="";
+            document.querySelector('.found').innerHTML = `Huhoh, we don't have similar hobbies.<br><br>
+                But let me still tell you about mine:<br>
+                1. Sleeping<br>
+                2. Eating<br>
+                3. Sleeping again 😴<br><br>
+                Hehe, I am just kidding (actually I am not 😉) but still I have other hobbies, such as:<br>
+                - Singing<br>
+                - Dancing<br>
+                - Drawing<br>
+                - Reading<br>
+                - Writing<br>
+                - Coding and many others!`;
+        }
+    }
+</script>
+ <div class="images">
+ <a class="first" href="page2.html"><img src="p3.png" width="100"></a>
+ <a href="page4.html"><img src="p2.png" width="100"></a>
+</div>
+</body>
+
+
+</html>
